@@ -19,16 +19,11 @@ bodového ohodnocení.
 import random
 import time
 
-# separator
-separator = 70 * "-"
-def welcomeMessage():
+
+def welcome_message():
     print("Hi there!")#program pozdraví užitele a vypíše úvodní text
-    print(separator)# separator
     print("I've generated a random 4 digit number for you.")
     print("Let's play a bulls and cows game.")
-
-# separator
-print(separator)
 
 #vytvoří tajné 4místné číslo
 def generate_secret_number():
@@ -89,7 +84,7 @@ def game_results (atempts, time_start):
     print("You've guessed the right number for", {atempts}, "atempts.")
 
 def main():
-    welcomeMessage()
+    welcome_message()
 
     secret_number = generate_secret_number ()
     atempts = 0
