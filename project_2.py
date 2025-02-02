@@ -91,7 +91,7 @@ def main():
     time_start = time.time()
 
     while True:
-        user_guess = input("Enter a number")
+        user_guess = input("Enter a number ")
         atempts +=1
         if validate_guess (user_guess):
             print("Invalid input. Please enter 4 unique digits that don't start with 0.")
