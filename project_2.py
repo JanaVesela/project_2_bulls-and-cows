@@ -63,7 +63,7 @@ def round_evaluation(secret_number, user_number):
     elif number_find > -1:
         cows += 1
 
-    return bulls, cows ()
+    return bulls, cows
         
     
 
@@ -86,7 +86,7 @@ def game_results (atempts, time_start):
     finish_time = time_stop - time_start
     seconds = finish_time / 60
     print("Your total time is", {seconds}, "seconds.")
-    print("You've guessed the right number for, {atempts}, atempts.")
+    print("You've guessed the right number for", {atempts}, "atempts.")
 
 def main():
     welcomeMessage()
