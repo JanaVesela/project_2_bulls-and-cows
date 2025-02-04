@@ -21,12 +21,18 @@ import time
 
 
 def welcome_message():
-    print("Hi there!")#program pozdraví užitele a vypíše úvodní text
+    """
+    program pozdraví užitele a vypíše úvodní text
+    """
+    print("Hi there!")
     print("I've generated a random 4 digit number for you.")
     print("Let's play a bulls and cows game.")
 
 #vytvoří tajné 4místné číslo
 def generate_secret_number():
+    """
+    program vytvoří tajné 4místné číslo
+    """
     while True:
         secret_number = random.randint(1000, 9999)
         if len(set(str(secret_number))) == 4:
@@ -36,33 +42,22 @@ def generate_secret_number():
 def round_evaluation(secret_number, user_number):
     bulls = 0
     cows = 0
-  
-    number_find = (user_number.find(str(secret_number)[0]))
-    if number_find == 0:
+    for x in renge(4):
+        number_find = (user_number.find(str(secret_number)[x]))
+    if number_find == x:
         bulls += 1
     elif number_find > -1:
         cows += 1
-    number_find = (user_number.find(str(secret_number)[1]))
-    if number_find == 1:
-        bulls += 1
-    elif number_find > -1:
-        cows += 1
-    number_find = (user_number.find(str(secret_number)[2]))
-    if number_find == 2:
-        bulls += 1
-    elif number_find > -1:
-        cows += 1
-    number_find = (user_number.find(str(secret_number)[3]))
-    if number_find == 3:
-        bulls += 1
-    elif number_find > -1:
-        cows += 1
-
-    return bulls, cows
-        
     
+    return bulls, cows
+
+
+separator = /
 
 def round_info (bulls, cows):
+    """   
+    pocitani spravně uhodnutých čísel, v množném a jednotném čísle
+    """
     bull_text = "bull"
     cow_text = "cow"
     if bulls > 1:
@@ -71,17 +66,24 @@ def round_info (bulls, cows):
     if cows > 1:
         cow_text = "cows"
 
-    print(f"{bulls} {bull_text}, {cows} {cow_text}\n{separator}")
+    print(f"{bulls} {bull_text}, {cows} {cow_text}{'separator'}")
 
 def validate_guess (user_guess):
+    """
+    číslo zadané uživatelem, nesmí být kratší nebo delší než 4 čísla,
+    nesmí obsahovat duplicity, nesmí začínat nulou, nesmí obsahovat nečíselné znaky    
+    """
     return len(user_guess) != 4 or not user_guess.isdigit() or user_guess[0] == '0' or len(set(user_guess)) != 4
 
 def game_results (atempts, time_start):
+    """
+    počítání času ve hře v sekundách a počítání pokusů
+    """
     time_stop = time.time()
     finish_time = time_stop - time_start
     seconds = finish_time / 60
-    print("Your total time is", {seconds}, "seconds.")
-    print("You've guessed the right number for", {atempts}, "atempts.")
+    print(f"Your total time is", {seconds}, "seconds.")
+    print(f"You've guessed the right number for", {atempts}, "atempts.")
 
 def main():
     welcome_message()
