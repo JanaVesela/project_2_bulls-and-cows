@@ -53,7 +53,7 @@ def round_evaluation(secret_number, user_number):
 
 def round_info (bulls, cows):
     """   
-    pocitani spravně uhodnutých čísel, v množném a jednotném čísle
+    vypisuje spravně uhodnutá čísla, v množném a jednotném čísle
     """
     bull_text = "bull"
     cow_text = "cow"
@@ -74,7 +74,7 @@ def validate_guess (user_guess):
 
 def game_results (atempts, time_start):
     """
-    počítání času ve hře v sekundách a počítání pokusů
+   vypisuje čas ve hře v sekundách a počítání pokusů
     """
     time_stop = time.time()
     finish_time = time_stop - time_start
