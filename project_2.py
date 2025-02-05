@@ -74,7 +74,7 @@ def validate_guess (user_guess):
 
 def game_results (atempts, time_start):
     """
-   vypisuje čas ve hře v sekundách a počítání pokusů
+   vypisuje čas ve hře v sekundách a počet pokusů
     """
     time_stop = time.time()
     finish_time = time_stop - time_start
